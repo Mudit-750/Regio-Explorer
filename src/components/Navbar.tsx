@@ -9,10 +9,10 @@ const Navbar = () => {
           <span className="text-black">REST</span>
           <span className="text-indigo-700">Explorer</span>
         </div>
-        <ul className="text-gray-600 gap-3.5 flex items-center">
-          <li className='hover:underline'><NavLink to="/">Home</NavLink></li>
-          <li className='hover:underline'><NavLink to="/countries">Countries</NavLink></li>
-          <li className='hover:underline'><NavLink to="/about">About</NavLink></li>
+        <ul className="text-gray-600  gap-3.5 flex items-center">
+          <li className='hover:underline hover:text-gray-900 font-medium'><NavLink to="/">Home</NavLink></li>
+          <li className='hover:underline hover:text-gray-900 font-medium'><NavLink to="/countries">Countries</NavLink></li>
+          <li className='hover:underline hover:text-gray-900 font-medium'><NavLink to="/about">About</NavLink></li>
         </ul>
       </nav>
     </header>
