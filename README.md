@@ -41,8 +41,8 @@ To avoid refetching country data every time the user navigates back to the list,
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/country-explorer.git
-cd travel-project
+git clone https://github.com/Mudit-750/Regio-Explorer.git
+cd Regio-Explorer
 npm install
 npm run dev
 ```
