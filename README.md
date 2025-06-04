@@ -1,54 +1,49 @@
-# React + TypeScript + Vite
+# 🌍 Regio Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**RegioExplorer** is a sleek, modern web app built with React, TypeScript, and Tailwind CSS that lets users explore countries around the world. It fetches real-time data from the [REST Countries API](https://restcountries.com) to display detailed information about each country, including population, capital, region, flags, and more.
 
-Currently, two official plugins are available:
+## 🚀 Features
+| Feature                         | Description                                                              |
+| ------------------------------- | ------------------------------------------------------------------------ |
+| 🔎 **Search by Name**           | Instantly filter countries as you type.                                  |
+| 🌐 **Filter by Region**         | Filter results by continent or region.                                   |
+| 📄 **Detailed Country Pages**   | Get official name, capital, subregion, currency, map, and population.    |
+| 🗺️ **Google Maps Integration**  |  Jump to the country’s location on Google Maps with one click.           |
+| 🧭 **Fully Responsive**         | Clean layout that works perfectly on desktops, tablets, and smartphones. |
+| ⚡ **Skeleton Loaders**         | Polished loading state that mimics final content layout.                 |
+| 🔙 **Go Back Button**           | Navigate easily without losing scroll state or refetching.               |
+| 🧠 **Client-Side Caching**      | Caches country list in `sessionStorage` to avoid unnecessary API calls.  |
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🧪 Tech Stack
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- ⚛️ React + TypeScript
+- 🎨 Tailwind CSS
+- 🔄 React Router DOM
+- 📦 Axios
+- 🛰️ REST Countries API
+- 🧠 sessionStorage for caching
+- 🖼️ Skeleton loaders and spinners
+
+## 🧠 Caching Mechanism
+
+Why refetch when you don’t have to?
+
+On the first fetch from the REST Countries API, the response is stored in sessionStorage.
+Navigating back to the main list doesn’t trigger a refetch, resulting in faster performance and lower API usage.
+To avoid refetching country data every time the user navigates back to the list, the app uses sessionStorage to cache the fetched data in memory.
+
+
+
+## 🛠️ Installation
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/yourusername/country-explorer.git
+cd travel-project
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```

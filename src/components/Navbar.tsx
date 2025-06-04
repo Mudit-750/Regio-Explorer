@@ -1,20 +1,21 @@
 
-import { NavLink,Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <header>
-      <nav className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-12 py-1.5 sm:py-4 px-11">
-        <div className="font-bold text-xl">
+      <nav className="flex flex-row items-center justify-center sm:justify-start gap-4 sm:gap-11 py-3 sm:py-4 px-3 sm:px-11 border-b  border-b-gray-300">
+        <div className="font-bold sm:text-xl">
           <NavLink to="/">
-          <span className="text-black">REST</span>
-          <span className="text-indigo-700">Explorer</span>
+            <span className="text-black">REGIO</span>
+            <span className="text-indigo-700">Explorer</span>
           </NavLink>
         </div>
-        <ul className="text-gray-600  gap-3.5 flex items-center">
-          <li className='hover:underline hover:text-gray-900 font-medium'><NavLink to="/">Home</NavLink></li>
-          <li className='hover:underline hover:text-gray-900 font-medium'><NavLink to="/countries">Countries</NavLink></li>
-          <li className='hover:underline hover:text-gray-900 font-medium'><NavLink to="/about">About</NavLink></li>
+        <div className="hidden sm:block w-0.5 h-6 bg-gray-300"></div>
+        <ul className="text-gray-600   flex gap-3.5 items-center">
+          <li className='hover:underline hover:text-gray-900 font-medium sm:text-lg'><NavLink to="/">Home</NavLink></li>
+          <li className='hover:underline hover:text-gray-900 font-medium sm:text-lg'><NavLink to="/countries">Countries</NavLink></li>
+          <li className='hover:underline hover:text-gray-900 font-medium sm:text-lg'><NavLink to="/about">About</NavLink></li>
         </ul>
       </nav>
     </header>
