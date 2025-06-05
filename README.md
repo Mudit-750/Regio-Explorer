@@ -1,7 +1,7 @@
 # 🌍 Regio Explorer
 
 **RegioExplorer** is a sleek, modern web app built with React, TypeScript, and Tailwind CSS that lets users explore countries around the world. It fetches real-time data from the [REST Countries API](https://restcountries.com) to display detailed information about each country, including population, capital, region, flags, and more.
-
+🌐 Live Demo: https://regio-explorer.netlify.app
 ## 🚀 Features
 | Feature                         | Description                                                              |
 | ------------------------------- | ------------------------------------------------------------------------ |
