@@ -42,7 +42,7 @@ const Countries = () => {
 
 
   return (
-    <div className="mx-8 sm:mx-20 p-6">
+    <div className="mx-10 sm:mx-20 p-6">
       <h2 className="text-3xl font-bold mb-6 text-gray-800 text-center sm:text-left">Countries🗺️</h2>
       <div className="flex flex-col sm:flex-row gap-7 items-center  mb-6">
         <input type="text" value={search}
@@ -69,16 +69,18 @@ const Countries = () => {
             filteredCountries.map((country: any) => {
               return (
                 <li key={country.cca3}
-                  className="bg-white border border-gray-200 rounded-xl p-4 shadow hover:shadow-lg transition"
+                  className="border border-gray-300 rounded-xl p-4 shadow hover:shadow-xl transition hover:bg-gray-100"
                 >
-                  <Link to={`/countries/${country.name.common}`}
-                    className="text-indigo-600 hover:underline text-lg font-bold">
-                    {country.name.common}
+                  <Link to={`/countries/${country.name.common}`} className="block">
+                    <h3 className="text-indigo-600 hover:underline text-lg font-bold">
+                      {country.name.common}
+                    </h3>
+                    <div className="text-gray-600  mt-1">
+                      Region: {country.region} <br />
+                      Population: {country.population.toLocaleString()}
+                    </div>
                   </Link>
-                  <div className="text-gray-600  mt-1">
-                    Region: {country.region} <br />
-                    Population: {country.population.toLocaleString()}
-                  </div>
+
                 </li>)
             })}
       </ul>

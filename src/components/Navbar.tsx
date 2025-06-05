@@ -11,7 +11,7 @@ const Navbar = () => {
             <span className="text-indigo-700">Explorer</span>
           </NavLink>
         </div>
-        <div className="hidden sm:block w-0.5 h-6 bg-gray-300"></div>
+        <div className="hidden sm:block w-0.5 h-6 bg-gray-400"></div>
         <ul className="text-gray-600   flex gap-3.5 items-center">
           <li className='hover:underline hover:text-gray-900 font-medium sm:text-lg'><NavLink to="/">Home</NavLink></li>
           <li className='hover:underline hover:text-gray-900 font-medium sm:text-lg'><NavLink to="/countries">Countries</NavLink></li>
