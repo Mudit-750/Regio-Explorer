@@ -9,6 +9,7 @@ const Countries = () => {
   const [search, setsearch] = useState<string>("")
   const [region, setRegion] = useState<string>("")
   const [loading, setLoading] = useState<boolean>(true)
+  const [error, setError] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,13 +17,15 @@ const Countries = () => {
       if (cacheData) {
         setdata(JSON.parse(cacheData))
         setLoading(false)
+        return
       }
       try {
-        const res = await axios.get("https://restcountries.com/v3.1/all")
+        const res = await axios.get("https://restcountries.com/v3.1/all?fields=name,region,population,cca3")
         setdata(res.data)
         sessionStorage.setItem("countries", JSON.stringify(res.data))
       } catch (error) {
         console.error("unable to fetch data", error)
+        setError(true)
       } finally {
         setLoading(false)
       }
@@ -62,9 +65,9 @@ const Countries = () => {
         </select>
       </div>
 
-      { }
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {loading ? <SkeletonLoader /> :
+        {loading ? <SkeletonLoader /> : 
+        error? <li className="text-red-500 text-center">Failed to load countries. Please try again later. </li>:
           filteredCountries.length === 0 ? <li className="text-xl">No Countries match your filters</li> :
             filteredCountries.map((country: any) => {
               return (
@@ -73,7 +76,7 @@ const Countries = () => {
                 >
                   <Link to={`/countries/${country.name.common}`} className="block">
                     <h3 className="text-indigo-600 hover:underline text-lg font-bold">
-                      {country.name.common}
+                      {country.name?.common || "Unknoown Country"}
                     </h3>
                     <div className="text-gray-600  mt-1">
                       Region: {country.region} <br />
