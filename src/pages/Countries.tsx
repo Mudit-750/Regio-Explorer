@@ -67,7 +67,7 @@ const Countries = () => {
 
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {loading ? <SkeletonLoader /> : 
-        error? <li className="text-red-500 text-center">Failed to load countries. Please try again later. </li>:
+        error? <li className="text-red-500 text-center font-bold">Failed to load countries. Please try again later. </li>:
           filteredCountries.length === 0 ? <li className="text-xl">No Countries match your filters</li> :
             filteredCountries.map((country: any) => {
               return (
